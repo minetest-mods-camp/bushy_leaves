@@ -32,6 +32,11 @@ local node_box_bushy_leaves = {
 	},
 }
 
+local node_box_full_node = {
+	type = "fixed",
+	fixed = { -8/16, -8/16, -8/16,  8/16,  8/16,  8/16 },
+}
+
 local get_node_box = function(node_name, node_def)
 	local node_box
 	if (
@@ -52,6 +57,7 @@ local add_bushy_leaves = function()
 				{
 					drawtype = "nodebox",
 					node_box = node_box,
+					collision_box = node_box_full_node,
 				}
 			)
 		end
